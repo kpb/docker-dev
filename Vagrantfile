@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder.
   # I use this to share a project that I'd like to build/run in the box via docker.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  # config.vm.synced_folder "/host/dir", "/guest/dir"
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "docker-dev"
