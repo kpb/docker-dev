@@ -1,0 +1,10 @@
+---
+#######
+#
+# Debian specific tasks
+
+- name: install https transport for apt
+  apt:
+    name: apt-transport-https
+    state: present
+

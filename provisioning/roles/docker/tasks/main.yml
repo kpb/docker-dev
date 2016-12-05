@@ -1,0 +1,32 @@
+---
+#######
+# Docker Role
+
+#######
+#
+# Install docker:
+# - Add the docker repository
+# - and it's key
+# - install
+# - add vagrant user to the docker group for great justice
+- name: add docker repo
+  apt_repository:
+    repo: 'deb https://apt.dockerproject.org/repo debian-jessie main'
+    state: present
+
+- name: add docker repo key
+  apt_key:
+    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+
+- name: install docker
+  apt:
+    name: docker-engine
+    state: latest
+    update_cache: yes
+    force: yes
+
+- name: include vagrant user in docker group
+  user:
+    name: vagrant
+    groups: docker
