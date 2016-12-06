@@ -1,7 +1,8 @@
 ## Docker Dev
 
 A simple [Vagrant][1] and [Ansible][2] project to stand up a [Docker][3]
-development environment. Includes `docker-compose`.
+development environment. Includes `docker-compose`. The box is based on
+[Debian Jessie][5] because it's [free][6] and awesome.
 
 ## Use
 
@@ -31,3 +32,5 @@ There is a standard, simple, and commented set of Ansible files in the
 [2]: http://docs.ansible.com/ansible/index.html "Ansible docs"
 [3]: https://docker.com
 [4]: https://www.vagrantup.com/docs/installation/ "Vagrant installation"
+[5]: https://www.debian.org "Debian The Universal Operating System"
+[6]: https://www.debian.org/intro/free "Freedom"
