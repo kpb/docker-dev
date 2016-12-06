@@ -1,7 +1,7 @@
 ---
 #######
 # Docker Role
-
+#
 #######
 #
 # Install docker:
@@ -30,3 +30,22 @@
   user:
     name: vagrant
     groups: docker
+
+#######
+#
+# Install docker engine from github.
+# TODO create a var for docker-compose version.
+- name: register kernel name
+  shell: uname -s
+  register: kernel_name
+
+- name: register machine hardware name
+  shell: uname -m
+  register: hardware_name
+
+- name: get docker engine from github
+  get_url:
+    url: >
+      https://github.com/docker/compose/releases/download/1.9.0-rc4/docker-compose-{{ kernel_name.stdout }}-{{ hardware_name.stdout }}
+    dest: /usr/local/bin/docker-compose
+    mode: 0755
