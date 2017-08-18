@@ -3,8 +3,14 @@
 #
 # Debian specific tasks
 
-- name: install https transport for apt
+- name: install docker prerequisites
   apt:
-    name: apt-transport-https
+    name: "{{ item }}"
     state: present
-
+    update_cache: yes
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg2
+    - software-properties-common
