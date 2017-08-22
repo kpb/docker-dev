@@ -27,9 +27,10 @@ use docker _for great justice!_
 There is a standard, simple, and commented set of Ansible files in the
 `provisioning` directory.
 
-## Look
+## Watch
 
-<script type="text/javascript" src="https://asciinema.org/a/mKOjemRqoPN3JZ65I5dqs9LfS.js" id="asciicast-mKOjemRqoPN3JZ65I5dqs9LfS" async></script>
+[![asciicast](https://asciinema.org/a/mKOjemRqoPN3JZ65I5dqs9LfS.png)](https://asciinema.org/a/mKOjemRqoPN3JZ65I5dqs9LfS)
+
 
 <!-- refs -->
 [1]: https://www.vagrantup.com "Vagrant"
