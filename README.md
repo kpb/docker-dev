@@ -12,7 +12,15 @@ From the project directory, containing the `Vagrantfile`, run:
 
     vagrant up
 
-wait a bit. Then:
+wait a bit. (It can take a while to update Debian, install Docker, etc. for example:
+
+    $ time vagrant up
+    ...
+    real	22m47.561s
+    user	0m44.163s
+    sys	    0m4.643s
+
+Then:
 
     vagrant ssh
 
@@ -35,9 +43,9 @@ There is a standard, simple, and commented set of Ansible files in the
 
 Tested using the following versions
 
-| [Vagrant][1] | [Virtual Box][7] |
-| :---         | :---             |
-| 2.0.2   | 5.2.6 r120293 (Qt5.9.1) |
+| [Vagrant][1] | [Virtual Box][7]   | Vagrant Plugins |
+| :---         | :---               | :---            |
+| 2.0.2   | 5.2.6 r120293 (Qt5.9.1) | vagrant-cachier (1.2.1), vagrant-vbguest (0.15.1) ||
 
 
 <!-- refs -->
