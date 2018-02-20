@@ -31,11 +31,20 @@ There is a standard, simple, and commented set of Ansible files in the
 
 [![asciicast](https://asciinema.org/a/mKOjemRqoPN3JZ65I5dqs9LfS.png)](https://asciinema.org/a/mKOjemRqoPN3JZ65I5dqs9LfS)
 
+## Testing
+
+Tested using the following versions
+
+| [Vagrant][1] | [Virtual Box][7] |
+| :---         | :---             |
+| 2.0.2   | 5.2.6 r120293 (Qt5.9.1) |
+
 
 <!-- refs -->
 [1]: https://www.vagrantup.com "Vagrant"
 [2]: http://docs.ansible.com/ansible/index.html "Ansible docs"
-[3]: https://docker.com
+[3]: https://docker.com "Docker"
 [4]: https://www.vagrantup.com/docs/installation/ "Vagrant installation"
 [5]: https://www.debian.org "Debian The Universal Operating System"
 [6]: https://www.debian.org/intro/free "Freedom"
+[7]: https://www.virtualbox.org/
