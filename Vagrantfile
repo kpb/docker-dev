@@ -3,7 +3,9 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "bento/debian-8.6"
+  config.vm.box = "debian/contrib-stretch64"
+
+  # Hi. I left some common config options in the following comments. Enjoy!
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -24,9 +26,12 @@ Vagrant.configure("2") do |config|
     vb.name = "docker-dev"
   end
 
+  # Provision with ansible.
+  # If you want the very latest ansible, ansible.install_mode = "pip"
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "provisioning/docker-dev.yml"
-    ansible.sudo = true
+    ansible.version = "latest"
+    become = true
   end
   
 end
