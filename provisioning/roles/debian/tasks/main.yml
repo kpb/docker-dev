@@ -1,13 +1,26 @@
 ---
-#######
-#
+
 # Debian specific tasks
 
+#
+# Install Aptitude because it kicks ass (ansible < 2.4 needs it)
+#
+- name: install aptitude
+  command: /usr/bin/apt-get -y install aptitude
+
+#
+# Update cache and safe-upgrade
+- name: update debian
+  apt:
+    update_cache: yes
+    upgrade: safe
+
+#
+# Sundry packages required by docker
+#
 - name: install docker prerequisites
   apt:
     name: "{{ item }}"
-    state: present
-    update_cache: yes
   with_items:
     - apt-transport-https
     - ca-certificates

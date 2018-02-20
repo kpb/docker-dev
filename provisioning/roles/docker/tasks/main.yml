@@ -1,6 +1,6 @@
 ---
 #########
-# All that's needed to install docker from the official docker repo
+# Install from the docker official repo.
 #
 
 #########
@@ -9,17 +9,19 @@
 # - and it's key
 # - install
 # - add vagrant user to the docker group for great justice
-- name: add docker repo
-  apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/debian jessie stable"
-    state: present
-
 - name: add docker repo key
   apt_key:
     url: https://download.docker.com/linux/debian/gpg
     state: present
     id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
     validate_certs: no
+
+- name: add docker repo
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable"
+    state: present
+
+
 
 - name: install docker
   apt:
@@ -47,6 +49,6 @@
 - name: get docker engine from github
   get_url:
     url: >
-      https://github.com/docker/compose/releases/download/1.15.0/docker-compose-{{ kernel_name.stdout }}-{{ hardware_name.stdout }}
+      https://github.com/docker/compose/releases/download/1.18.0/docker-compose-{{ kernel_name.stdout }}-{{ hardware_name.stdout }}
     dest: /usr/local/bin/docker-compose
     mode: 0755
