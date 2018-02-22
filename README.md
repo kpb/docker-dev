@@ -4,6 +4,8 @@ A simple [Vagrant][1] and [Ansible][2] project to stand up a [Docker][3]
 development environment. Includes `docker-compose`. The box is based on
 [Debian Jessie][5] because it's [free][6] and awesome.
 
+You can also use this to learn a little bit about [Vagrant][1] and Ansible[2].
+
 ## Use
 
 Make sure you've [installed Vagrant][4].
@@ -12,7 +14,7 @@ From the project directory, containing the `Vagrantfile`, run:
 
     vagrant up
 
-wait a bit. (It can take a while to update Debian, install Docker, etc. for example:
+wait a bit. (It can take a while to update Debian, install Docker, etc.) For example:
 
     $ time vagrant up
     ...

@@ -1,20 +1,21 @@
 ---
-#########
+#
 # Install from the docker official repo.
 #
 
-#########
+#
 # Install docker:
 # - Add the docker repository
 # - and it's key
 # - install
 # - add vagrant user to the docker group for great justice
+#
 - name: add docker repo key
   apt_key:
     url: https://download.docker.com/linux/debian/gpg
     state: present
     id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
-    validate_certs: no
+    validate_certs: yes
 
 - name: add docker repo
   apt_repository:
@@ -35,9 +36,10 @@
     name: vagrant
     groups: docker
 
-#########
+#
 # Install docker engine from github.
 # TODO create a var for docker-compose version.
+#
 - name: register kernel name
   shell: uname -s
   register: kernel_name
